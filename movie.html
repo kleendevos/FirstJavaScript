@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Poppins:100i,400|Roboto+Mono" rel="stylesheet">
+
+</head>
+
+<style>
+    body {
+        background-color: darkslategrey;
+        color: aliceblue;
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    h1 {
+        color: aliceblue;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 500%;
+        margin: 0pt;
+        text-align: center;
+    }
+
+    #ondertitel {
+        font-size: small;
+        margin-top: 0pt;
+        text-align: center;
+    }
+
+    #description {
+        text-align: center;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+
+</style>
+
+<body>
+
+<img src="/Users/vdabcursist/downloads/snatch.jpg" >
+
+<script>
+
+    var film = {
+        "title": "SNATCH",
+        "director": "Guy Ritchie",
+        "rating": 4,
+        "runlength": 104,
+        "description": "Unscrupulous boxing promoters, violent bookmakers, a Russian gangster, incompetent amateur robbers, and supposedly Jewish jewelers fight to track down a priceless stolen diamond.",
+        "characters": [
+            {
+                "name": "Franky Four Fingers",
+                "actor": {"firstname": "Benicio", "Lastname": "Del Toro"}
+            },
+            {
+                "name": "Cousin Avi",
+                "actor": {"firstname": "Dennis", "Lastname": "Farina"}
+            },
+            {
+                "name": "Mickey O'Neill",
+                "actor": {"firstname": "Brad", "Lastname": "Pitt"}
+            },
+
+        ],
+        "comment": [
+            {
+                "text": "review - review - review",
+                "user": {"alias": "Mister X", "Firstname": "Mister", "Lastname": "X"}
+            },
+            {
+                "text": "review - review - review",
+                "user": {"alias": "Mister Y", "Firstname": "Mister", "Lastname": "Y"}
+            },
+            {
+                "text": "review - review - review",
+                "user": {"alias": "Miss Y", "Firstname": "Miss", "Lastname": "Y"}
+            },
+        ]
+
+    };
+
+    film.print = function () {
+        document.write("<h1>" + this.title + "</h1>" + "</br>");
+        document.write("<p id='ondertitel'>"
+            + this.runlength + " min |  "
+            + "director: " + this.director
+            + "</p>");
+        document.write("<p id='description'>" + this.description + "</p>")
+    };
+    film.print();
+
+
+    film.print = function () {
+        document.write("<table>");
+
+        document.write("<thead><tr><th>Character</th><th>Actor</th></tr></thead>");
+        document.write("<tbody>");
+        for (var character of film.characters) {
+            document.write("<tr>");
+            document.write("<td>" + character.name + "</td>");
+            document.write("<td>" + character.actor.firstname + " " + character.actor.Lastname + " " + "</td>");
+            document.write("</tr>");
+        }
+        document.write("</tbody>");
+        document.write("</table>");
+    };
+    film.print();
+
+    film.print = function () {
+        document.write("<table>");
+
+        document.write("<thead><tr><th>Review</th></tr></thead>");
+        document.write("<tbody>");
+        for (var comment of film.comment) {
+            document.write("<tr>");
+            document.write("<td>" + comment.text + "</td>");
+            document.write("<td>" + comment.user.alias + " " + comment.user.Firstname + " " + "</td>");
+            document.write("</tr>");
+        }
+        document.write("</tbody>");
+        document.write("</table>");
+    };
+    film.print();
+
+
+</script>
+
+
+</body>
+</html>

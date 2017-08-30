@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form id="invul">
+<div>
+    <label for="birthdate"> Geef je geboortedatum: </label>
+    <input id="birthdate" type="text" value="" placeholder="YYYY-MM-DD">
+</div>
+
+<div>
+    <input id="berekenbutton" type="submit" value="bereken">
+</div>
+</form>
+
+<script>
+
+
+
+    var b = document.getElementById('invul');
+    b.addEventListener("submit", bereken);
+
+    function bereken (e) {
+        e.preventDefault();
+        var bday = document.getElementById('birthdate');
+        var today = new Date();
+        var todaymont = today.getMonth();
+        var todayd = today.getDate();
+
+        console.log(bday,today);
+        console.log(bday.value);
+
+        var d = new Date(bday.value);
+        var dmonth = d.getMonth();
+        var dday = d.getDate();
+
+        console.log(d);
+
+
+
+        var dag = 1000*60*60*24;
+        var periode = Math.ceil ((today.getTime()- d.getTime())/dag);
+
+        console.log (periode)
+
+
+
+
+
+
+
+        //document.write ("je verjaart op:" + bday.value);
+        //document.write ("de datum van vandaag is" + today);
+
+    }
+
+
+
+</script>
+
+</body>
+</html>

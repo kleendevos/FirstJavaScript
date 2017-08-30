@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+<button id="mybutton" onclick='showmessage'> click here </button>
+
+<div class = container>
+<form>
+    <div>
+    <label for="fn"> Voornaam: </label>
+    <input id="fn">
+    </div>
+
+    <div>
+        <label for="ln"> Achternaam: </label>
+        <input id="ln">
+    </div>
+    <input type="submit" value="registreer"/>
+
+    <div>
+
+    </div>
+
+
+
+
+
+</form>
+</div>
+
+<script>
+
+    var address = {};
+
+    address.street = "straat";
+    address.city= "gemeente";
+
+    address.print = function () {
+        document.write(this.street + " " + this.city)
+    }
+    address.print();
+
+
+    var d = new Date;
+    d.print = function (){
+        document.write(this)
+    }
+    d.print();
+    // function toevoegen aan vooraf gedefinieerde klasse.
+
+    //var e = new Date;
+    //e.print();  //e heeft geen function want niet omdat het aan d is toegevoegd dat dit ook voor e het geval is
+
+    Date.prototype.print = function () {
+
+    } // vanaf nu heeft elke new date de print functie
+
+    var a = [];
+    a.push("jimi");
+    a.push("jimi");
+
+    document.write(a.join(","));
+
+    for(var i =0; i<a.length;i++){
+       document.write(a[i] + "</br>")
+    }
+
+    function showmessage () {
+        alert("hallo");
+    }
+
+    var b = document.getElementById('mybutton');
+    b.addEventListener("click", showmessage);
+
+    var l = document.getElementById('ln');
+    l.addEventListener("keypress", function (e) {
+        console.log(e)
+    })
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

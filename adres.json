@@ -1,0 +1,13 @@
+{ "address":{
+  "name":"jimi hendrix",
+  "street":"street",
+  "extras":[
+    "bedrijf",
+    "dienst"
+  ],
+  "number":1,
+  "city":{
+    "postalcode":1234,
+    "name": "gemeente"
+  }
+}}

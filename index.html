@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="mijnscript.js"></script>
+
+    </head>
+    <body>
+        <h1>Welkom</h1>
+
+        <script>
+            document.write("Dit is JavaScript " + (5*8)+ "<br/>");
+            document.write("Dit is JavaScript " + (5*8)+ "<br/>");
+
+            console.log("dit is ook output");
+
+            var i = 5;
+
+            var d =  new Date();
+            var t = `hello`;
+
+            document.write(i+3 + "<br/>");
+            document.write(d.getFullYear() + "<br/>");
+            document.write(t + "<br/>");
+
+            window.alert("hello World");
+            var leeftijd = window.prompt("how old are you?");
+
+            berekenleeftijd(leeftijd,5,5);
+            document.write(berekenleeftijd(leeftijd,5,5));
+
+
+            function berekenleeftijd (i, j, k) {
+                return i + j * k;
+            }
+        </script>
+
+        <h2>Einde pagina</h2>
+
+
+    </body>
+</html>

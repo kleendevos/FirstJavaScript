@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Mijn Animatie Effect</title>
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+        <style>
+            body {
+                background-image: url(https://img0.etsystatic.com/000/0/5434618/il_fullxfull.177222492.jpg);
+                background-size: 2rem;
+            }
+
+            html, body {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            main {
+                display: flex;
+                align-items: center;
+                border: 0.25rem solid black;
+                width: 20rem;
+                height: 20rem;
+                justify-content: center;
+                margin: auto;
+                font-family: "Indie Flower";
+                font-size: 3rem;
+                border-radius: 50%;
+                background: radial-gradient(circle, red, green, blue);
+                color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <main id="mijnbol">
+            <div id="subject"> Miauw </div>
+            <div id="miauw"> Miauw</div>
+        </main>
+
+        <script>
+
+            var s = document.getElementById("mijnbol");
+            s.style.color="#98ff98";
+            s.style.background="black";
+            s.style.borderColor ="black";
+            s.style.fontFamily="Open Sans Condensed, sans-serif";
+
+            function appear() {
+                var s = document.getElementById("mijnbol");
+                var m = document.getElementById("miauw")
+                s.style.color="black";
+                s.style.background="#98ff98";
+                s.style.borderColor ="#98ff98";
+            }
+            setTimeout(appear,1000);
+
+            var dim = 20;
+            function getbigger() {
+                var s = document.getElementById("mijnbol");
+                var v = dim + "rem";
+                s.style.width=v;
+                s.style.height=v;
+                dim += 0.5;
+                if(dim < 40) {
+                    setTimeout(getbigger, 40);
+                }
+            } getbigger();
+
+
+            var size = 5;
+            function changetext(){
+                var l = document.getElementById("subject");
+                var f = size + "rem";
+                l.style.fontSize = f;
+                size += 1;
+                if (size < 5){
+                    setTimeout(changetext, 40);
+                }
+            } changetext();
+
+            var m = document.getElementById("miauw")
+            m.style.alignItems="left";
+            m.style.color= "white";
+            m.style.fontSize="2rem";
+
+
+
+        </script>
+    </body>
+</html>

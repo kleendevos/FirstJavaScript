@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Abel|Zilla+Slab+Highlight" rel="stylesheet">
+</head>
+
+<style>
+
+    body{
+        background-color: cadetblue;
+        font-family: 'Abel', sans-serif;
+        color: aliceblue;
+        text-align: center;
+    }
+
+    #lost{
+        font-size: 800%;
+        color: aliceblue;
+        font-family: 'Abel', sans-serif;
+        text-align: center;
+    }
+
+    #solution{
+        text-align: center;
+    }
+
+    #won{
+        font-size: 800%;
+        color: aliceblue;
+        font-family: 'Abel', sans-serif;
+        text-align: center;
+    }
+
+    #getal{
+        font-size: x-large;
+    }
+
+    #thanks{
+        font-size: 500%;
+        color: aliceblue;
+        font-family: 'Zilla Slab Highlight', cursive;
+        text-align: center;
+        
+    }
+
+
+
+</style>
+<body>
+
+<h1>The Guessing Game</h1>
+
+
+<script>
+
+
+    var maximum = 10;
+    document.write("enter a number between 0 and " + maximum);
+
+    do {
+        var getal = Math.floor(Math.random() * maximum) + 1;
+        console.log(getal);
+        var guess = window.prompt("First Guess");
+        if (guess == getal) {
+            document.write("<p id='won'>YOU WON </p>" + "</br>");
+        } else {
+            var guess = window.prompt("second Guess");
+            if (guess == getal) {
+                document.write("<p id='won'>YOU WON </p>" + "</br>");
+            } else {
+                var guess = window.prompt("third Guess");
+                if (guess == getal) {
+                    document.write("<p id='won'>YOU WON </p>" + "</br>");
+                } else {
+                    document.write("<p id='lost'>YOU LOST</p>" + "</br>");
+                }
+            }
+
+        }
+        document.write("<p id='solution'>The number was</p>" + "<span id='getal'>" + getal + "</span>");
+        var playagain = window.prompt("play again: Y or N");
+
+    } while (playagain == "Y");
+    document.write("</br>" + "<p id='thanks'>  Thanks for playing! </p>" + "</br>");
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

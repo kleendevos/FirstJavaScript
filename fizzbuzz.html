@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <title>Title</title>
+</head>
+
+<style>
+
+    body{
+        font-family: 'Roboto Mono', monospace;
+        margin: 0px 0px 0px 0px;
+        text-align: center;
+    }
+
+    p{
+        margin: 0px 0px 0px 0px;
+        font-size: x-large;
+    }
+
+
+
+
+
+</style>
+
+
+<body>
+
+<script>
+
+    for(i=1; i<100; i++){
+
+        if(i%3===0 && i%5===0){
+            document.write("<p id='fizzbuzz'>fizzbuzz</p>")
+        }  else if (i%5===0){
+            document.write("<p id='buzz'>buzz</p>")
+        }  else if (i%3===0){
+            document.write ("<p id='fizz'>fizz</p>")
+        }
+        else {
+            document.write(i + "<br>")
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>

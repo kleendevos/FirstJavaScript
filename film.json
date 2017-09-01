@@ -1,0 +1,56 @@
+{
+  "title": "SNATCH",
+  "director": "Guy Ritchie",
+  "rating": 4,
+  "runlength": 104,
+  "description": "Unscrupulous boxing promoters, violent bookmakers, a Russian gangster, incompetent amateur robbers, and supposedly Jewish jewelers fight to track down a priceless stolen diamond.",
+  "characters": [
+    {
+      "name": "Franky Four Fingers",
+      "actor": {
+        "firstname": "Benicio",
+        "Lastname": "Del Toro"
+      }
+    },
+    {
+      "name": "Cousin Avi",
+      "actor": {
+        "firstname": "Dennis",
+        "Lastname": "Farina"
+      }
+    },
+    {
+      "name": "Mickey O'Neill",
+      "actor": {
+        "firstname": "Brad",
+        "Lastname": "Pitt"
+      }
+    }
+  ],
+  "comment": [
+    {
+      "text": "review - review - review",
+      "user": {
+        "alias": "Mister X",
+        "Firstname": "Mister",
+        "Lastname": "X"
+      }
+    },
+    {
+      "text": "review - review - review",
+      "user": {
+        "alias": "Mister Y",
+        "Firstname": "Mister",
+        "Lastname": "Y"
+      }
+    },
+    {
+      "text": "review - review - review",
+      "user": {
+        "alias": "Miss Y",
+        "Firstname": "Miss",
+        "Lastname": "Y"
+      }
+    }
+  ]
+}

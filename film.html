@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+
+    function Film (title, rating, runlength){
+        this.title = title;
+        this.rating = rating;
+        this.runlength = runlength;
+        this.characters = [];
+        this.comment = [];
+    }
+
+
+
+
+    function Actor (firstname, lastname){
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
+
+    Actor.prototype = Object.create(Actor.prototype);
+
+
+    Film.prototype.addcharacter = function (actor, name) {
+        this.characters.push ({
+            actor: actor,
+            name: name
+        })
+
+
+    };
+
+
+    Film.prototype.addcomment = function (review){
+        this.review = review;
+    };
+
+
+
+    Film.prototype.setdescription = function (description){
+        this.description = description;
+    };
+
+
+
+
+    var f = new Film("x",2,104);
+    f.setdescription("description");
+    f.addcharacter(new Actor("Mister", "X"),"The monster");
+    f.addcomment("dit is een belangrijke review");
+
+    var a = new Actor("X", "X");
+
+    console.log(a)
+
+
+    console.log(f);
+    console.log(f.description);
+    console.log(f.characters[0]);
+
+
+    document.write(f.title + "</br>");
+    document.write("Rating: " + f.rating + "</br>");
+    document.write("Runlength: " +  f.runlength + "</br>");
+    document.write(f.description + "</br>");
+    document.write(f.characters[0])
+
+</script>
+
+</body>
+</html>

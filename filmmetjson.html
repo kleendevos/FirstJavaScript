@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="container">
+        <h1> XML - HTTP REQUEST </h1>
+        <button id="mijnknop"> data inladen van server</button>
+        <div id="output"> </div>
+    </div>
+
+
+
+<script>
+    var b = document.getElementById("mijnknop");
+    b.addEventListener("click", function (e) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "film.json");
+        xhr.addEventListener("readystatechange" , function () {
+           if (xhr.readyState === 4) {
+               if (xhr.status === 200){
+
+                   var f = JSON.parse(xhr.responseText);
+                   var output = document.getElementById("output");
+                   output.innerHTML += "<h1>" + f.title + "</h1>";
+
+
+
+                   var actortable =  "<table>";
+                   actortable += "<thead>";
+                   actortable += "<tr>";
+                   actortable += "<th>" + "Character" + "</th>" + "<th>" + "Actor" + "</th>";
+                   actortable += "</tr>";
+                   actortable += "</thead>";
+                   actortable += "<tbody>";
+                   for (var character of f.characters){
+                      actortable += "<tr>";
+                      actortable += "<td>" + character.name + "</td>";
+                       actortable += "<td>" + character.actor.firstname + " " + character.actor.Lastname + " " + "</td>";
+                       actortable += "</tr>"
+                   }
+                   actortable +="</tbody>";
+                   actortable +="</table>";
+                   output.innerHTML += actortable;
+
+                   var reviewtable = "<table>"
+                   reviewtable += "<thead>";
+                   reviewtable += "<tr>";
+                   reviewtable += "<th>" + "review" + "</th>";
+                   reviewtable += "</tr>";
+                   reviewtable += "</thead>";
+                   reviewtable += "<tbody>";
+                   for (var reviews of f.comment){
+                       reviewtable += "<tr>";
+                       reviewtable += "<td>" + reviews.text + "</td>";
+                   }
+                   reviewtable += "</tbody>";
+                   reviewtable += "</thead>";
+                   output.innerHTML += reviewtable;
+
+
+
+
+
+                   // all good
+               } else {
+                   alert ("failed");
+               }
+           }
+        });
+        xhr.send();
+    });
+
+</script>
+
+</body>
+</html>

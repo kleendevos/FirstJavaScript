@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    #message {
+        border-style: dotted;
+        padding: 10pt;
+        margin-bottom: 20pt;
+    }
+</style>
+<body>
+
+<h1>Remember me?</h1>
+
+<div id="message"></div>
+
+<form id="myform">
+    <input id="firstname" placeholder="Enter first name here">
+    <input id="lastname" placeholder="Enter last name here">
+    <input id="button" type="submit" value="Who are you?">
+</form>
+
+<script>
+    var message = document.getElementById("message");
+    message.innerHTML = "Hey Stranger, haven't seen you around before ...";
+
+
+    if (localStorage.bezoeker != null){
+        var bezoeker = JSON.parse(localStorage.bezoeker);
+        message.innerHTML = "Welcome back, " + bezoeker;
+    } else {
+        message.innerHTML = "Hey Stranger, haven't seen you around before ...";
+    }
+
+
+    var form = document.getElementById("myform");
+    form.addEventListener("submit", clickonbutton);
+
+
+    function clickonbutton(e) {
+        e.preventDefault()
+
+        var bezoeker = form.firstname.value + " " + form.lastname.value;
+        localStorage.setItem("bezoeker", bezoeker);
+
+        var name = localStorage.getItem("bezoeker", bezoeker);
+        message.innerHTML = "Thanks for letting us know you are "+ name + "!";
+
+        localStorage.bezoeker = JSON.stringify(bezoeker);
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

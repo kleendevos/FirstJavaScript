@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" rel="stylesheet">
+</head>
+<Style>
+    #star{
+        margin: 100pt;
+    }
+
+    body{
+        background-color: #1a2930;
+        font-family: 'Baloo Tammudu', cursive;
+    }
+
+
+</Style>
+<body>
+<canvas id="star" width="800" height="800">
+    </canvas>
+
+<script type="text/javascript">
+    var canvas = document.getElementById("star");
+    var context = canvas.getContext("2d");
+    var offset = [100,100];
+
+    context.beginPath();
+    context.lineJoin = 'mitter';
+    context.lineTo(200,250);
+    context.lineTo(120,250);
+    context.lineTo(210,320);
+    context.lineTo(150,410);
+    context.lineTo(270,330);
+    context.lineTo(290,450);
+    context.lineTo(320,350);
+    context.lineTo(430,410);
+    context.lineTo(360,310);
+    context.lineTo(480,280);
+    context.lineTo(350,250);
+    context.lineTo(400,180);
+    context.lineTo(280,220);
+    context.lineTo(180,150);
+    context.closePath();
+    context.fillStyle = "darkorange";
+    context.strokeStyle = 'darkorange';
+    context.lineWidth = 80;
+    context.stroke();
+    context.fill();
+
+    context.beginPath();
+    context.lineJoin = 'mitter';
+    context.lineTo(220,250);
+    context.lineTo(130,250);
+    context.lineTo(220,310);
+    context.lineTo(150,410);
+    context.lineTo(260,350);
+    context.lineTo(290,470);
+    context.lineTo(320,350);
+    context.lineTo(430,410);
+    context.lineTo(360,310);
+    context.lineTo(480,280);
+    context.lineTo(350,250);
+    context.lineTo(400,180);
+    context.lineTo(280,220);
+    context.lineTo(180,150);
+    context.closePath();
+    context.fillStyle = "yellow";
+    context.strokeStyle = 'orange';
+    context.lineWidth = 30;
+    context.stroke();
+    context.fill();
+
+    context.font = "90px Baloo Tammudu";
+    context.fillStyle = "red";
+    context.strokeStyle ="#1a2930"
+    context.strokeText('BOOM!', 150,310);
+    context.fillText('BOOM!', 150,310);
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

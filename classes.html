@@ -6,68 +6,93 @@
 </head>
 <body>
 <div id="acteur"></div>
+<div id="movie"></div>
 
 <script>
-
-    let out = document.getElementById("acteur");
+    let outacteur = document.getElementById("acteur");
+    let outmovie = document.getElementById("movie");
 
     class Person {
-        constructor (firstName = 'john', lastName = 'Doe') {
-
-            this.firstname = firstName;
-            this.lastName = lastName;
-
+        constructor(firstname = 'john', lastname = 'Doe') {
+            this.firstname = firstname;
+            this.lastname = lastname;
         }
 
-        get fullname(){
-            return this.firstname + " " + this.lastName;
+        get fullname() {
+            return this.firstname + " " + this.lastname;
         }
 
-        set myFirstName (f){
+        set myFirstname(f) {
             this.firstname = f;
         }
 
-        set myLastName (l) {
-            this.lastName = l;
+        set myLastname(l) {
+            this.lastname = l;
         }
-
     }
 
     class Actor extends Person {
-        constructor(firstName, LastName, ...characters ){
-            super(firstName, LastName);
+        constructor(firstname, lastname, ...characters) {
+            super(firstname, lastname);
             this.characters = characters;
         }
 
-         function (tostring) {
-            out.innerHTML = Actor.firstname + " " + Actor.lastName + " as " + Actor.characters.toString()
-         }
-
+        toString () {
+            return ` ${this.firstname} ${this.lastname} as [${this.characters.join(', ')}]` ;
+        }
     }
 
-    class Movie extends Actor {
-        constructor (title, genre,runtime,actors) {
-            super(actors);
+    class Movie {
+        constructor(title, genre, runtime, ...actors) {
             this.title = title;
             this.genre = genre;
             this.runtime = runtime;
+            this.actors = actors;
         }
 
-        set addActor (actor) {
-
+        addActor(actor) {
+            this.actors.push(actor);
         }
+
+        get characters () {
+            let characters = [];
+            this.actors.forEach(actor => {characters.push(actor.characters);
+            });
+            return characters;
+        }
+
+
+
+        toString () {
+            return `${this.title} (${this.genre}) [${this.runtime}]`
+        }
+
 
     }
 
     let a = new Actor("Tom", "Hanks", "Forrest Gump", "Captain Miller");
     console.log(a);
+    console.log (`${a}`);
+    console.log (`Actor: ${a.firstname} ${a.lastname} as [${a.characters.toString()}]`);
 
     let m = new Movie("Forrest Gump", "Drama", 135, new Actor("Tom", "Hanks", "Forrest Gump"));
-    console.log(m);
+    m.addActor (new Actor("Robin", "Wright", "Jenny Curran"));
+    console.log (m);
+    console.log (`${m}`);
+    console.log(`Movie: ${m.title} (${m.genre}) [${m.runtime}] staring ${m.characters.join(',')}` );
+
+    let n = new Movie("Fight Club", "Drama" ,120);
+    n.addActor (new Actor("Edward", "Norton", "The Narrator"));
+    n.addActor (new Actor("Brad", "Pitt", "Tyler Durden"));
+    console.log (n);
+    console.log (`${n}`);
+    console.log(`Movie: ${n.title} (${n.genre}) [${n.runtime}] staring ${n.characters.join(',')}` );
 
 
 
 </script>
 
 </body>
+</html>
+
 </html>
